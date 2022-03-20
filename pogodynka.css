@@ -297,6 +297,12 @@ button span{
 .junior .temp-info .description-label{
     display: none;
 }
+.junior .temp-info .city-name{
+    display: none;
+}
+.junior .temp-info .place-time{
+    display: none;
+}
 .junior .temp-info .min-max-divider{
     grid-row: 2 / 3;
     grid-column: 2 / 3;

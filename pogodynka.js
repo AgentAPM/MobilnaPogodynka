@@ -55,6 +55,7 @@ function bind(el, data, appTitleToCityName = false) {
 
 	el.querySelector(".icon").src = `https://openweathermap.org/img/wn/${icon}.png`;
 	el.querySelector(".city-name").innerText = name;
+	el.querySelector(".place-time").innerText = `(${dateFormatHHMM(now.getTime() / 1000 + now.getTimezoneOffset() * 60 + timezone)})`;
 	el.querySelector(".description").innerText = description;
 	el.querySelector(".temp").innerText = `${temp}°C`;
 	el.querySelector(".temp-min").innerText = `${temp_min}°C`;
@@ -129,6 +130,10 @@ app = {
 					SEARCH_FRAGMENT.classList.add("hidden");
 					LIST_FRAGMENT.classList.remove("hidden");
 					app.currentFragment = LIST_FRAGMENT;
+
+					while(binding.placeList.firstChild)
+						binding.placeList.removeChild(binding.placeList.lastChild);
+
 					data.list.forEach(d=>{
 						let el=PLACE_ITEM_TEMPLATE.cloneNode(true);
 						bind(el,d);
