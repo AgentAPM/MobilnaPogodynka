@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pogodynka</title>
+	<link rel="stylesheet" href="pogodynka.css">
+	<script src="pogodynka.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+	<div class="device">
+		<div class="screen junior">
+			<div id="appbar">
+				<i class="material-icons return">arrow_back</i>
+				<span id="title">
+					Pogodynka
+				</span>
+				<span class="menu">
+					<i class="material-icons more">more_vert</i>
+				</span>
+			</div>
+			<div class="fragment" id="search-fragment">
+				<div id="search-window">
+					<div class="search-bar">
+						<input type="text" >
+						<div class="search-buttons">
+							<button id="search-place">
+								<div class="circle">
+									<i class="material-icons">place</i>
+								</div>
+								<span>Sprawdź miejsce</span>
+							</button>
+
+							<button id="search-area">
+								<div class="circle">
+									<i class="material-icons">my_location</i>
+								</div>
+								<span>Sprawdź okolicę</span>
+							</button>
+
+							<!--
+								<div class="button-wrapper">
+									<button id="search-place">
+										<i class="material-icons">place</i>
+									</button>
+									<span>Sprawdź miejsce</span>
+								</div>
+								<div class="button-wrapper">
+									<button id="search-area">
+										<div class="circle">
+											<i class="material-icons">my_location</i>
+										</div>
+										<span>Sprawdź okolicę</span>
+								</button>
+							-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="fragment hidden" id="city-fragment">
+				<div class="temp-info">
+					<img class="icon">
+					<span class="temp-label">Temperatura:</span>
+					<span class="temp"></span>
+					<span class="temp-min-label">Minimalna:</span>
+					<span class="temp-min"></span>
+					<span class="min-max-divider">-</span>
+					<span class="temp-max-label">Maksymalna:</span>
+					<span class="temp-max"></span>
+					<span class="temp-feels-label">~</span>
+					<span class="temp-feels"></span>
+					<span class="description-label">Pogoda:</span>
+					<span class="description"></span>
+					<span class="city-name"></span>
+				</div>
+				<div class="divider"></div>
+				<table class="weather-info">
+					<tr>
+						<td><i class="material-icons">filter_hdr</i></td>
+						<td>Ciśnienie</td>
+						<td class="pressure">1024hPa</td>
+					</tr>
+					<tr>
+						<td><i class="material-icons">opacity</i></td>
+						<td>Wilgotność</td>
+						<td class="humidity">86%</td>
+					</tr>
+					<tr>
+						<td><i class="material-icons">brightness_7</i></td>
+						<td>Godzina wsch.</td>
+						<td class="sunrise">06:31</td>
+					</tr>
+					<tr>
+						<td><i class="material-icons">nightlight</i></td>
+						<td>Godzina zach.</td>
+						<td class="sunset">22:14</td>
+					</tr>
+				</table>
+			</div>
+			<div class="fragment hidden" id="list-fragment">
+				<ul class="place-list">
+					<li class="place-item" id="place-item-template">
+						<span class="city-name"></span>
+						<img class="icon">
+						<span class="temp-label">Temperatura:</span>
+						<span class="temp"></span>
+						<span class="temp-min-label">Minimalna:</span>
+						<span class="temp-min"></span>
+						<span class="min-max-divider">-</span>
+						<span class="temp-max-label">Maksymalna:</span>
+						<span class="temp-max"></span>
+						<span class="temp-feels-label">~</span>
+						<span class="temp-feels"></span>
+						<span class="description-label">Pogoda:</span>
+						<span class="description"></span>
+						<span class="pressure">1024hPa</span>
+						<span class="humidity">86%</span>
+						<span class="place-time">12:53</span>
+						<span class="sunrise">12:53</span>
+						<span class="sunset">12:53</span>
+					</li>
+				</ul>
+			
+			
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

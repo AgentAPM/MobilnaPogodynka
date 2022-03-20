@@ -1,0 +1,333 @@
+* {
+    --main-color:#689f38;
+    --main-color-light:#c5e1a5;
+    --night-color:#283593;
+    --night-color-light:#7986cb;
+    box-sizing: border-box;
+    --bar-height:2.5rem;
+}
+
+@media (pointer: fine){
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: slategray;
+    font-family: 'Roboto', sans-serif;
+}
+
+.device{
+    --border:16px;
+    background-color:black;
+    padding: var(--border);
+    padding-bottom: 50px;
+    border-radius: var(--border);
+    margin: 16px;
+}
+.screen{
+    background-color: white;
+    display:block;
+    height:calc(100vh - 100px);
+    aspect-ratio: calc(9/16);
+    position:relative;
+    overflow: hidden;
+}
+
+
+i.return{
+    content:"arrow_back";
+}
+i.more{
+    content:"menu";
+}
+}
+
+@media (pointer: coarse){
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: slategray;
+    font-family: 'Roboto', sans-serif;
+    padding:0;
+    margin:0;
+}
+
+.device{
+    --border:16px;
+    background-color:black;
+    padding: 0;
+}
+.screen{
+    background-color: white;
+    display:block;
+    width:100vw;
+    height:calc(100vh - 0px);
+    position:relative;
+    overflow: hidden;
+}
+
+i.return{
+    content:"arrow_back";
+}
+i.more{
+    content:"more_vert";
+}
+}
+.hidden{
+    display:none !important;
+}
+
+#appbar{
+    height:var(--bar-height);
+    background:var(--main-color);
+    color:white;
+    padding:0.1rem;
+    display:flex;
+    align-items: center;
+    /*box-shadow: 0px 0px 20px 9px black;*/
+    z-index: 10;
+    border-bottom:solid #fffa 2px;
+}
+#appbar i{
+    margin:0 0.1rem;
+    cursor:pointer;
+}
+#appbar #title{
+    flex-grow: 1;
+    cursor:default;
+}
+#appbar .menu{
+    
+}
+
+.card {
+    background:dimgray;
+    color:azure;
+    padding: 3rem;
+    border-radius: 3rem;
+    margin: 2rem;
+}
+
+.search {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+
+.error{
+    margin-top:1rem;
+}
+
+.description-wrapper{
+    display:flex;
+    align-items: center;
+}
+
+img.icon {
+    width: 3rem;
+}
+
+.temp {
+    font-size: 3rem;
+}
+
+.fragment {
+    width:100%; height:calc(100% - var(--bar-height));
+    display: flex;
+    position:absolute;
+    transform-origin: 50% 50%;
+}
+
+#search-window {
+    margin:auto;
+    background: var(--main-color);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.search-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+}
+
+.search-buttons .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    width: min-content;
+}
+
+.search-buttons button {
+    --color:white;
+    color: var(--color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    outline: none;
+    border: none;
+    transition: color 250ms;
+}
+button span{
+    width: min-content;
+}
+.circle {
+    width: 4rem;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 0.25rem var(--color) solid;
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+
+    transition: border-color, 250ms;
+}
+.search-buttons button:focus-visible,
+.search-buttons button:hover {
+    --color: var(--main-color-light);
+    outline: none;
+}
+
+.search-bar input {
+    background: white;
+    padding: 0.2rem;
+    border:none;
+    border-radius: 0.5rem;
+    color: var(--main-color);
+    font-size: 1rem;
+
+    transition: box-shadow 250ms;
+}
+
+#search-window input:focus-visible,
+#search-window input:focus {
+    box-shadow: inset 0px -4px 10px 2px var(--main-color-light);
+}
+
+.search-bar input:focus-visible {
+    outline:none;
+}
+
+
+#city-fragment{
+    background: var(--main-color);
+    flex-direction: column;
+}
+
+.junior .temp-info{
+    width:min-content;
+    aspect-ratio: 4/3;
+    margin: 3rem auto;
+    color:white;
+    text-align: center;
+    --color:var(--main-color);
+
+    display:grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto min-content auto;
+}
+
+.junior .temp-info .temp{
+    font-size: 4rem;
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+}
+.junior .temp-info .temp-min{
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    text-align: end;
+}
+.junior .temp-info .temp-max{
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    text-align: start;
+}
+.junior .temp-info .temp-feels{
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+}
+.junior .temp-info .description{
+    grid-row: 4 / 5;
+    grid-column: 1 / 4;
+}
+.junior .temp-info .icon{
+    position:absolute;
+    margin: auto;
+    grid-column: 1/4;
+    grid-row: 1/5;
+    align-self: center;
+    justify-self: center;
+    aspect-ratio: 1;
+    width: 100%;
+    pointer-events: none;
+    filter: sepia(0.95) saturate(200) hue-rotate(65deg) brightness(0.25) saturate(0.5) brightness(1.5);
+}
+
+.junior .temp-info .temp-label{
+    display: none;
+}
+.junior .temp-info .temp-min-label{
+    display: none;
+}
+.junior .temp-info .temp-max-label{
+    display: none;
+}
+.junior .temp-info .temp-feels-label{
+    display: none;
+}
+.junior .temp-info .description-label{
+    display: none;
+}
+.junior .temp-info .min-max-divider{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+.temp-info span {
+    z-index: 1;
+    text-shadow:    -1px -1px 0 var(--color),
+                     1px -1px 0 var(--color),
+                    -1px  1px 0 var(--color),
+                     1px  1px 0 var(--color);
+
+}
+
+.weather-info {
+    color:white;
+    height: min-content;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+.weather-info td:last-of-type{
+    text-align: right;
+}
+
+.divider{
+    width:100%;
+    height:0.5rem;
+    background-color: var(--main-color);
+    opacity: 50%;
+}
+
+.place-list{
+    overflow: scroll;
+}
